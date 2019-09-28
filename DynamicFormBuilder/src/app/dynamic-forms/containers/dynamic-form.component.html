@@ -1,0 +1,7 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+    <ng-container>
+        <div *ngFor="let field of config;" dynamicField [config]="field" [group]="form">
+            <hr />
+        </div>
+    </ng-container>
+</form>

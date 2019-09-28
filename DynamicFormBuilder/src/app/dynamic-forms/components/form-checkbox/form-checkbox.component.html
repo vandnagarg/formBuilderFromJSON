@@ -1,0 +1,12 @@
+<div class="form-group" [formGroup]="group">
+    <app-ordinal [ordinal]="count"></app-ordinal>
+  
+  <label>{{ config.label }}</label>
+    <span *ngFor="let option of config.options">
+      <input type="checkbox" [value]="option" [formControlName]="config.name"   />
+      {{ option }}
+    </span>
+  <div *ngIf="control.touched && control.errors" class="invalid-feedback"  style="display: block !important">
+    <div *ngIf="control.errors.required">This field is required</div>
+  </div>
+</div>

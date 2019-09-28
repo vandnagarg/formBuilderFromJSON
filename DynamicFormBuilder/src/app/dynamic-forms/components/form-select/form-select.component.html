@@ -1,0 +1,16 @@
+<div class=" form-group " [formGroup]="group">
+    <app-ordinal [ordinal]="count"></app-ordinal>
+
+  <label>{{ config.label }}</label>
+  <select [formControlName]="config.name" class="form-control"
+    [ngClass]="{ 'is-invalid': this.control.touched && this.control.errors }" >
+
+  <option value="">{{ config.placeholder }}</option>
+  <option *ngFor="let option of config.options">
+    {{ option }}
+  </option>
+  </select>
+  <div *ngIf="this.control.touched && this.control.errors" class="invalid-feedback">
+    <div *ngIf="this.control.errors.required">This field is required</div>
+  </div>
+</div>
